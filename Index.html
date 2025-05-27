@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Royal Riders - Members</title>
+  <title>The Thump Syndicate</title>
   <style>
     body {
-      background-color: #111;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
       padding: 40px;
       margin: 0;
     }
@@ -16,6 +16,7 @@
     h1 {
       text-align: center;
       margin-bottom: 10px;
+      font-size: 2.5em;
     }
 
     .join-button {
@@ -30,10 +31,6 @@
       cursor: pointer;
     }
 
-    .join-button:hover {
-      background-color: #c03;
-    }
-
     .members-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -42,22 +39,22 @@
     }
 
     .Members-card {
-      background-color: #222;
+      background-color: #111;
       border-radius: 10px;
       padding: 20px;
       text-align: center;
-      transition: transform 0.3s ease, background-color 0.3s ease;
       width: 100%;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
     }
 
     .Members-card:hover {
-      background-color: #333;
       transform: scale(1.05);
     }
 
-    .member-name {
-      background-color: #444;
-      color: #fff;
+    .member-button {
+      background-color: #333;
+      color: white;
       border: none;
       padding: 10px 15px;
       font-size: 1.1em;
@@ -66,104 +63,30 @@
       width: 100%;
     }
 
-    .member-name:hover {
-      background-color: #666;
-    }
-
-    .member-details {
-      background-color: #1c1c1c;
-      margin-top: 10px;
-      padding: 15px;
-      border-radius: 10px;
-      color: #ccc;
-      max-width: 100%;
-      transition: all 0.3s ease;
-    }
-
-    .member-details.hidden {
-      display: none;
-    }
-
-    .member-details img {
-      width: 100px;
-      border-radius: 50%;
-      margin-bottom: 10px;
+    .member-button:hover {
+      background-color: #555;
     }
   </style>
 </head>
 <body>
 
-  <h1>Our Members</h1>
+  <h1>The Thump Syndicate</h1>
   <button class="join-button">Join The Ride</button>
 
   <div class="members-grid">
-    <!-- Member 1 -->
     <div class="Members-card">
-      <button class="member-name" onclick="showMember('shubham')">Shubham Nigam</button>
-      <div id="member-shubham" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Shubham Nigam">
-        <p><strong>Shubham Nigam</strong> - Founder, Royal Enfield enthusiast, long-distance rider.</p>
-      </div>
+      <button class="member-button">Shubham Nigam</button>
     </div>
-
-    <!-- Member 2 -->
     <div class="Members-card">
-      <button class="member-name" onclick="showMember('anand')">Anand Singh</button>
-      <div id="member-anand" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Anand Singh">
-        <p><strong>Anand Singh</strong> - Route planner, adventure junkie, camera guy.</p>
-      </div>
+      <button class="member-button">Anand Singh</button>
     </div>
-
-    <!-- Member 3 -->
     <div class="Members-card">
-      <button class="member-name" onclick="showMember('shivam')">Shivam Yadav</button>
-      <div id="member-shivam" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Shivam Yadav">
-        <p><strong>Shivam Yadav</strong> - Safety officer, group navigator, tech support.</p>
-      </div>
+      <button class="member-button">Nitin Mishra</button>
     </div>
-
-    <!-- Member 4 -->
     <div class="Members-card">
-      <button class="member-name" onclick="showMember('akhilesh')">Akhilesh Yadav</button>
-      <div id="member-akhilesh" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Akhilesh Yadav">
-        <p><strong>Akhilesh Yadav</strong> - Mechanical support, logistics coordinator, photographer.</p>
-      </div>
-    </div>
-
-    <!-- Member 5 -->
-    <div class="Members-card">
-      <button class="member-name" onclick="showMember('shivamchaudhary')">Shivam Chaudhary</button>
-      <div id="member-shivamchaudhary" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Shivam Chaudhary">
-        <p><strong>Shivam Chaudhary</strong> - Storyteller, ride documentarian, social media lead.</p>
-      </div>
-    </div>
-
-    <!-- Member 6 -->
-    <div class="Members-card">
-      <button class="member-name" onclick="showMember('shivamsingh')">Shivam Singh</button>
-      <div id="member-shivamsingh" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Shivam Singh">
-        <p><strong>Shivam Singh</strong> - Youngest rider, full of energy and team spirit.</p>
-      </div>
+      <button class="member-button">Trapti Singh</button>
     </div>
   </div>
-
-  <script>
-    function showMember(id) {
-      // Hide all member details
-      document.querySelectorAll('.member-details').forEach(el => {
-        el.classList.add('hidden');
-      });
-
-      // Show the clicked member
-      const selected = document.getElementById('member-' + id);
-      if (selected) selected.classList.remove('hidden');
-    }
-  </script>
 
 </body>
 </html>
