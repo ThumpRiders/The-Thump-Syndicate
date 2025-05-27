@@ -1,232 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Thump Syndicate</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('https://images.unsplash.com/photo-1619533392540-eac4c1f83970') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
+    <meta charset="UTF-8">
+    <title>The Thump Syndicate</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://images.unsplash.com/photo-1619533392540-eac4c1f83970') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.8);
-      min-height: 100vh;
-      padding-bottom: 40px;
-    }
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.8);
+            min-height: 100vh;
+            padding-bottom: 40px;
+        }
 
-    header {
-      padding-top: 80px;
-      text-align: center;
-    }
+        header {
+            padding-top: 80px;
+            text-align: center;
+        }
 
-    header h1 {
-      font-size: 4em;
-      margin-bottom: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      display: inline-block;
-      padding: 20px 40px;
-      border-radius: 12px;
-    }
+        header h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 12px;
+        }
 
-    .cta-button, .members-button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #ff5722;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+        .cta-button, .members-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #ff5722;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-    .cta-button:hover, .members-button:hover {
-      background-color: #e64a19;
-    }
+        .cta-button:hover, .members-button:hover {
+            background-color: #e64a19;
+        }
 
-    section {
-      padding: 50px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-    }
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
-    section h2 {
-      font-size: 2em;
-      color: #ff5722;
-      margin-bottom: 20px;
-    }
+        section h2 {
+            font-size: 2em;
+            color: #ff5722;
+            margin-bottom: 20px;
+        }
 
-    section p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      color: #ddd;
-    }
+        section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #ddd;
+        }
 
-    /* Members Section Styling */
-    .Members {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-      max-height: 1000px;
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.6s ease;
-      overflow: hidden;
-    }
+        .Members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-    .Members.hidden {
-      max-height: 0;
-      opacity: 0;
-      transform: translateY(-20px);
-      pointer-events: none;
-    }
+        .Members-card {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 180px;
+            box-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
+        }
 
-    .Members-card {
-      background-color: #1e1e1e;
-      padding: 20px;
-      border-radius: 10px;
-      width: 180px;
-      box-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
-    }
+        .Members-card h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #fff;
+        }
 
-    .Members-card h3 {
-      margin: 0;
-      font-size: 1.2em;
-      color: #fff;
-    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(255, 87, 34, 0.2);
+            transition: transform 0.3s ease;
+        }
 
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(255, 87, 34, 0.2);
-      transition: transform 0.3s ease;
-    }
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
 
-    .gallery img:hover {
-      transform: scale(1.03);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.8);
-      font-size: 0.9em;
-      color: #aaa;
-      margin-top: 40px;
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            font-size: 0.9em;
+            color: #aaa;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-  <div class="overlay">
-    <header>
-      <h1>The Thump Syndicate</h1>
-      <a href="https://chat.whatsapp.com/KzfZ88UVJB00OgriGgznkV" class="cta-button" target="_blank">Join the Ride</a>
-    </header>
+    <div class="overlay">
+        <header>
+            <h1>The Thump Syndicate</h1>
+            <a href="https://chat.whatsapp.com/KzfZ88UVJB00OgriGgznkV" class="cta-button" target="_blank">Join the Ride</a>
+        </header>
 
-    <section>
-      <h2>About Us</h2>
-      <p>
-        Welcome to <strong>The Thump Syndicate</strong> – a Royal Enfield riders club driven by passion, brotherhood, and the love of the open road.
-        We ride together, explore together, and grow together.
-      </p>
+        <section>
+            <h2>About Us</h2>
+            <p>
+                Welcome to <strong>The Thump Syndicate</strong> – a Royal Enfield riders club driven by passion, brotherhood, and the love of the open road.
+                We ride together, explore together, and grow together.
+            </p>
 
-      <!-- Toggle Button -->
-      <button class="members-button" onclick="toggleMembers()">Meet the Members</button><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Royal Riders - Members</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 40px;
-      margin: 0;
-    }
+            <!-- Changed from <h2> to button -->
+            <button class="members-button" onclick="document.getElementById('membersSection').scrollIntoView({ behavior: 'smooth' });">
+                Meet the Members
+            </button>
 
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .members-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-
-    .Members-card {
-      background-color: #222;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      width: 100%;
-    }
-
-    .Members-card:hover {
-      background-color: #333;
-      transform: scale(1.05);
-    }
-
-    .member-name {
-      background-color: #444;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      font-size: 1.1em;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .member-name:hover {
-      background-color: #666;
-    }
-
-    .member-details {
-      background-color: #1c1c1c;
-      margin-top: 10px;
-      padding: 15px;
-      border-radius: 10px;
-      color: #ccc;
-      max-width: 100%;
-      transition: all 0.3s ease;
-    }
-
-    .member-details.hidden {
-      display: none;
-    }
-
-    .member-details img {
-      width: 100px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
+        <section>
+            <h2>Our Royal Enfield Moments</h2>
+            <div class="gallery">
+                <img src="https://via.placeholder.com/400x200?text=Ride+1" alt="Ride 1">
+                <img src="https://via.placeholder.com/400x200?text=Ride+2" alt="Ride 2">
+                <img src="https://via.placeholder.com/400x200?text=Ride+3" alt="Ride 3">
+            </div>
+        </section>
 
   <h1>Our Members</h1>
 
