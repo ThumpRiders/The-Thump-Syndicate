@@ -140,6 +140,14 @@
                 Meet the Members
             </button>
 
+            <div id="membersSection" class="Members">
+                <div class="Members-card"><h3>Shubham Nigam</h3></div>
+                <div class="Members-card"><h3>Anand Singh</h3></div>
+                <div class="Members-card"><h3>Nitin Mishra</h3></div>
+                <div class="Members-card"><h3>Trapti Singh</h3></div>
+            </div>
+        </section>
+
         <section>
             <h2>Our Royal Enfield Moments</h2>
             <div class="gallery">
@@ -149,56 +157,9 @@
             </div>
         </section>
 
-  <h1>Our Members</h1>
-
-  <div class="members-grid">
-    <!-- Member 1 -->
-    <div class="Members-card">
-      <button class="member-name" onclick="showMember('shubham')">Shubham Nigam</button>
-      <div id="member-shubham" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Shubham Nigam">
-        <p><strong>Shubham Nigam</strong> - Founder, Royal Enfield enthusiast, long-distance rider.</p>
-      </div>
+        <footer>
+            © 2025 The Thump Syndicate. All rights reserved.
+        </footer>
     </div>
-
-    <!-- Member 2 -->
-    <div class="Members-card">
-      <button class="member-name" onclick="showMember('anand')">Anand Singh</button>
-      <div id="member-anand" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Anand Singh">
-        <p><strong>Anand Singh</strong> - Route planner, adventure junkie, camera guy.</p>
-      </div>
-    </div>
-
-    <!-- Member 3 -->
-    <div class="Members-card">
-      <button class="member-name" onclick="showMember('Nitin')">Nitin Mishra</button>
-      <div id="member-Nitin" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Nitin Mishra">
-        <p><strong>Nitin Mishra</strong> - Safety officer, group navigator, tech support.</p>
-      </div>
-    </div>
-
-    <!-- Member 4 -->
-    <div class="Members-card">
-      <button class="member-name" onclick="showMember('Trapti')">Trapti Singh</button>
-      <div id="member-Trapti" class="member-details hidden">
-        <img src="https://via.placeholder.com/100" alt="Trapti Singh">
-        <p><strong>Trapti Singh</strong> - Mechanical support, logistics coordinator, photographer.</p>
-      </div>
-    </div>
-  <script>
-    function showMember(id) {
-      // Hide all member details
-      document.querySelectorAll('.member-details').forEach(el => {
-        el.classList.add('hidden');
-      });
-
-      // Show the clicked member
-      const selected = document.getElementById('member-' + id);
-      if (selected) selected.classList.remove('hidden');
-    }
-  </script>
-
 </body>
 </html>
