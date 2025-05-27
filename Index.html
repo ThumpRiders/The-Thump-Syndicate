@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,16 +25,16 @@
 
         header h1 {
             font-size: 4em;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             background-color: rgba(0, 0, 0, 0.7);
             display: inline-block;
             padding: 20px 40px;
             border-radius: 12px;
         }
 
-        .cta-button, .members-button {
+        .cta-button, .members-button, .member-name-button {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 20px;
             padding: 15px 30px;
             background-color: #ff5722;
             color: white;
@@ -46,7 +46,7 @@
             transition: background-color 0.3s ease;
         }
 
-        .cta-button:hover, .members-button:hover {
+        .cta-button:hover, .members-button:hover, .member-name-button:hover {
             background-color: #e64a19;
         }
 
@@ -86,10 +86,9 @@
             box-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
         }
 
-        .Members-card h3 {
-            margin: 0;
-            font-size: 1.2em;
-            color: #fff;
+        .member-name-button {
+            width: 100%;
+            font-size: 1em;
         }
 
         .gallery {
@@ -129,7 +128,7 @@
 <body>
     <div class="overlay">
         <header>
-            <h1>The Thump Syndicate</h1>
+            <h1>The Thump Syndicate</h1><br>
             <a href="https://chat.whatsapp.com/KzfZ88UVJB00OgriGgznkV" class="cta-button" target="_blank">Join the Ride</a>
         </header>
 
@@ -145,10 +144,18 @@
 
             <!-- Members Section -->
             <div id="membersSection" class="Members hidden">
-                <div class="Members-card"><h3>Shubham Nigam</h3></div>
-                <div class="Members-card"><h3>Anand Singh</h3></div>
-                <div class="Members-card"><h3>Nitin Mishra</h3></div>
-                <div class="Members-card"><h3>Trapti Singh</h3></div>
+                <div class="Members-card">
+                    <button class="member-name-button">Shubham Nigam</button>
+                </div>
+                <div class="Members-card">
+                    <button class="member-name-button">Anand Singh</button>
+                </div>
+                <div class="Members-card">
+                    <button class="member-name-button">Nitin Mishra</button>
+                </div>
+                <div class="Members-card">
+                    <button class="member-name-button">Trapti Singh</button>
+                </div>
             </div>
         </section>
 
